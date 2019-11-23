@@ -3,6 +3,7 @@ php:
     - 7.2
     - 7.3
 install:
+    - echo "{\"http-basic\":{\"nova.laravel.com\":{\"username\":\"${NOVA_USERNAME}\",\"password\":\"${NOVA_PASSWORD}\"}}}" > auth.json
     - composer install
 script:
     - php ./vendor/bin/phpunit
