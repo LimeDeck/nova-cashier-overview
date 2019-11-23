@@ -1,3 +1,3 @@
 Nova.booting((Vue, router, store) => {
-  Vue.component('subscription', require('./components/Subscription'))
+  Vue.component('subscription', require('./components/Subscription').default)
 })
