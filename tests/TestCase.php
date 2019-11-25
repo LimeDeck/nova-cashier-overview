@@ -2,8 +2,8 @@
 
 namespace LimeDeck\NovaCashierOverview\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use LimeDeck\NovaCashierOverview\Providers\CashierOverviewServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
 {
