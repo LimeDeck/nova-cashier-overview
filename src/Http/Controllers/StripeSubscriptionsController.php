@@ -5,7 +5,6 @@ namespace LimeDeck\NovaCashierOverview\Http\Controllers;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 use Laravel\Cashier\Subscription;
-use Stripe\Dispute;
 use Stripe\Plan;
 use Stripe\Subscription as StripeSubscription;
 
@@ -147,7 +146,7 @@ class StripeSubscriptionsController extends Controller
                 'period_start' => $this->formatDate($invoice->period_start),
                 'period_end' => $this->formatDate($invoice->period_end),
                 'link' => $invoice->hosted_invoice_url,
-                'subscription' => $invoice->subscription
+                'subscription' => $invoice->subscription,
             ];
         })->toArray();
     }
@@ -160,6 +159,4 @@ class StripeSubscriptionsController extends Controller
     {
         return $value ? Carbon::createFromTimestamp($value)->toDateTimeString() : null;
     }
-
-
 }

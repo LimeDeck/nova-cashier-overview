@@ -2,8 +2,8 @@
 
 namespace LimeDeck\NovaCashierOverview\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Stripe\Stripe;
 
@@ -27,7 +27,7 @@ abstract class Controller extends BaseController
      */
     public function __construct(Repository $config, Request $request)
     {
-        $this->config  = $config;
+        $this->config = $config;
         $this->request = $request;
 
         $this->middleware(function ($request, $next) {
