@@ -1,10 +1,1 @@
-php:
-    preset: laravel
-    finder:
-        exclude:
-            - dist
-            - node_modules
-            - resources
-            - vendor
-        name: "*.php"
-        not-name: "*.blade.php"
+preset: laravel
