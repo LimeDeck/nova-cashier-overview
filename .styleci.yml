@@ -8,21 +8,3 @@ php:
             - vendor
         name: "*.php"
         not-name: "*.blade.php"
-        
-vue:
-    tab-width: 2
-    use-tabs: false
-    print-width: 120
-    double-quotes: false
-    trailing-commas: none
-    semicolons: false
-    arrow-parens: avoid
-    indent-script-and-style: false
-    finder:
-        exclude:
-            - dist
-            - node_modules
-            - routes
-            - src
-            - vendor
-        name: "*.vue"
