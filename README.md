@@ -1,7 +1,7 @@
 # A Laravel Nova resource tool to manage your Cashier (Stripe) subscriptions
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/limedeck/nova-cashier-overview.svg?style=flat-square)](https://packagist.org/packages/limedeck/nova-cashier-overview)
-![CircleCI branch](https://img.shields.io/circleci/project/github/limedeck/nova-cashier-overview/master.svg?style=flat-square)
+[![CircleCI](https://travis-ci.org/LimeDeck/nova-cashier-overview.svg?branch=master)](https://travis-ci.org/LimeDeck/nova-cashier-overview)
 [![StyleCI](https://github.styleci.io/repos/223514784/shield?branch=master)](https://github.styleci.io/repos/223514784)
 [![Total Downloads](https://img.shields.io/packagist/dt/limedeck/nova-cashier-overview.svg?style=flat-square)](https://packagist.org/packages/limedeck/nova-cashier-overview)
 
