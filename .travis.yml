@@ -2,8 +2,17 @@ language: php
 php:
     - 7.2
     - 7.3
+
+cache:
+    yarn: true
+    directories:
+        - node_modules
+
 install:
     - echo "{\"http-basic\":{\"nova.laravel.com\":{\"username\":\"${NOVA_USERNAME}\",\"password\":\"${NOVA_PASSWORD}\"}}}" > auth.json
     - composer install
+    - yarn
+
 script:
     - composer test
+    - yarn lint

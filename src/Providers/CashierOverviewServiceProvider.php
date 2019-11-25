@@ -2,10 +2,10 @@
 
 namespace LimeDeck\NovaCashierOverview\Providers;
 
+use Laravel\Nova\Nova;
+use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Nova\Events\ServingNova;
-use Laravel\Nova\Nova;
 
 class CashierOverviewServiceProvider extends ServiceProvider
 {
@@ -37,8 +37,9 @@ class CashierOverviewServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova'])
-                ->prefix('nova-vendor/nova-cashier-overview')
-                ->group(__DIR__.'/../../routes/api.php');
+            ->namespace('LimeDeck\NovaCashierOverview\Http\Controllers')
+            ->prefix('nova-vendor/nova-cashier-overview')
+            ->group(__DIR__.'/../../routes/api.php');
     }
 
     /**

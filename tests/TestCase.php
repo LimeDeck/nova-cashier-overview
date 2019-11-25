@@ -2,15 +2,15 @@
 
 namespace LimeDeck\NovaCashierOverview\Tests;
 
-use LimeDeck\NovaCashierOverview\Providers\CashierOverviewServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use LimeDeck\NovaCashierOverview\Providers\CashierOverviewServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
     /**
      * Get package providers.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param \Illuminate\Foundation\Application $app
      *
      * @return array
      */

@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/endpoint', function (Request $request) {
-//     //
-// });
+Route::get('/billable/{id}', 'DatabaseSubscriptionsController@show');
+Route::get('/subscriptions/{id}', 'StripeSubscriptionsController@show');
+Route::put('/subscriptions/{id}', 'StripeSubscriptionsController@update');
+Route::post('/subscriptions/{id}/resume', 'StripeSubscriptionsController@resume');
+Route::post('/subscriptions/{id}/cancel', 'StripeSubscriptionsController@cancel');
