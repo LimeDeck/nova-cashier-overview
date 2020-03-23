@@ -1,7 +1,5 @@
 <template functional>
-  <div 
-    :class="data.staticClass" 
-    class="flex border-b border-40">
+  <div :class="data.staticClass" class="flex border-b border-40">
     <div class="w-1/4 py-4">
       <h4 class="font-normal text-80">
         {{ props.label }}

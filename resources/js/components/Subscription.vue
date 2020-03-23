@@ -1,13 +1,11 @@
 <template>
   <div>
     <h1 class="mb-3 text-90 font-normal text-2xl">
-      Subscription <span class="font-light text-70">({{ subscriptionName }})</span>
+      {{ __('Subscription') }}
     </h1>
 
     <card class="mb-6 py-3 px-6 flex flex-col">
-      <database-details 
-        :subscription="databaseSubscription" 
-        :loading="loading.database" />
+      <database-details :subscription="databaseSubscription" :loading="loading.database" />
 
       <stripe-details
         :subscription="stripeSubscription"

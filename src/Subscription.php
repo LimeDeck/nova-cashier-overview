@@ -14,7 +14,6 @@ class Subscription extends ResourceTool
     public function __construct(string $subscription = 'default')
     {
         parent::__construct();
-
         $this->withMeta(compact('subscription'));
     }
 
