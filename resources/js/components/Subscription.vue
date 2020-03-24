@@ -5,11 +5,12 @@
     </h1>
 
     <card class="mb-6 py-3 px-6 flex flex-col">
-      <database-details 
-        :subscription="databaseSubscription" 
+      <database-details
+        :subscription="databaseSubscription"
         :loading="loading.database" />
 
       <stripe-details
+        v-if="databaseSubscription"
         :subscription="stripeSubscription"
         :invoices="invoices"
         :plans="plans"
