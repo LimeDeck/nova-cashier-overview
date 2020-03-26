@@ -6,6 +6,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/limedeck/nova-cashier-overview.svg?style=flat-square)](https://packagist.org/packages/limedeck/nova-cashier-overview)
 
 This [Nova](https://nova.laravel.com) tool lets you:
+
 - view a database subscription (subscription name is a parameter)
 - view Stripe subscription details
 - view invoices for a given subscription with a downloadable link
@@ -51,16 +52,24 @@ public function fields(Request $request)
         Subscription::make(),
 
         // if you want to display a specific subscription or multiple
-        Subscription::make('a-fancy-subscription-name'), 
+        Subscription::make('a-fancy-subscription-name'),
 
         ...
     ];
 }
 ```
 
+To translate the nova tool use:
+
+```bash
+php artisan vendor:publish --provider="LimeDeck\NovaCashierOverview\Providers\CashierOverviewServiceProvider"
+```
+
+Inside your /resources/lang/vendor/nova-cashier-overview you can create your custom translations.
+
 ### Testing
 
-``` bash
+```bash
 composer test
 ```
 

@@ -14,15 +14,39 @@ class CashierOverviewServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
+    public static $name = 'nova-cashier-overview';
+
     public function boot()
     {
         $this->app->booted(function () {
             $this->routes();
         });
 
+        // dd(resource_path('lang/vendor/' . static::$name));
+        $this->publishes([
+            __DIR__ . '/../../resources/lang' => resource_path('lang/vendor/' . static::$name),
+        ]);
+
         Nova::serving(function (ServingNova $event) {
-            Nova::script('nova-cashier-overview', __DIR__.'/../../dist/js/tool.js');
+            Nova::script('nova-cashier-overview', __DIR__ . '/../../dist/js/tool.js');
+            Nova::translations(static::getTranslations());
         });
+    }
+
+    private static function getTranslations(): array
+    {
+        $translationFile = resource_path('lang/vendor/' . static::$name . '/' . app()->getLocale() . '.json');
+
+        if (!is_readable($translationFile)) {
+            $translationFile = __DIR__ . '/../resources/lang/' . app()->getLocale() . '.json';
+
+            if (!is_readable($translationFile)) {
+                return [];
+            }
+        }
+
+        return json_decode(file_get_contents($translationFile), true);
     }
 
     /**
@@ -39,7 +63,7 @@ class CashierOverviewServiceProvider extends ServiceProvider
         Route::middleware(['nova'])
             ->namespace('LimeDeck\NovaCashierOverview\Http\Controllers')
             ->prefix('nova-vendor/nova-cashier-overview')
-            ->group(__DIR__.'/../../routes/api.php');
+            ->group(__DIR__ . '/../../routes/api.php');
     }
 
     /**
