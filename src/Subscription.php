@@ -25,7 +25,7 @@ class Subscription extends ResourceTool
      */
     public function name()
     {
-        return 'Subscription';
+        return $this->name ?: __('Subscription');
     }
 
     /**
