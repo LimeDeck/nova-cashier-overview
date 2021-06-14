@@ -13,13 +13,13 @@
         }
     ],
     "require": {
-        "php": ">=7.2.5",
+        "php": "^7.3 || ^8.0",
         "laravel/nova": "^3.0"
     },
     "require-dev": {
-        "limedeck/phpunit-detailed-printer": "^5.0",
-        "orchestra/testbench": "^5.10",
-        "phpunit/phpunit": "^8.5"
+        "limedeck/phpunit-detailed-printer": "^6.0",
+        "orchestra/testbench": "^6.18",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {

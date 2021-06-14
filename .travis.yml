@@ -1,19 +1,18 @@
 language: php
 php:
-    - 7.2
     - 7.3
     - 7.4
+    - 8.0
 
 cache:
-    yarn: true
     directories:
         - node_modules
 
 install:
     - echo "{\"http-basic\":{\"nova.laravel.com\":{\"username\":\"${NOVA_USERNAME}\",\"password\":\"${NOVA_PASSWORD}\"}}}" > auth.json
     - composer install
-    - yarn
+    - npm ci
 
 script:
     - composer test
-    - yarn lint
+    - npm run lint
