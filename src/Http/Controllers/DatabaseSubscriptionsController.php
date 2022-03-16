@@ -17,7 +17,7 @@ class DatabaseSubscriptionsController extends Controller
 
         /** @var \Illuminate\Database\Eloquent\Model $billableModel */
         $billableModel = (new $customerModel());
-        
+
         /** @var \Laravel\Cashier\Billable|\Illuminate\Database\Eloquent\Model $billable */
         $billable = $billableModel->find($billableId);
 
@@ -38,7 +38,7 @@ class DatabaseSubscriptionsController extends Controller
     }
 
     /**
-     * @param \Laravel\Cashier\Subscription $subscription
+     * @param  \Laravel\Cashier\Subscription  $subscription
      * @return array
      */
     protected function formatSubscription(Subscription $subscription)
