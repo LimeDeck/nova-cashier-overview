@@ -36,7 +36,7 @@ class DatabaseSubscriptionsController extends Controller
     }
 
     /**
-     * @param \Laravel\Cashier\Subscription $subscription
+     * @param  \Laravel\Cashier\Subscription  $subscription
      * @return array
      */
     protected function formatSubscription(Subscription $subscription)

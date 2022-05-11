@@ -13,6 +13,7 @@ class StripeSubscriptionsController extends Controller
     /**
      * @param $subscriptionId
      * @return array
+     *
      * @throws \Stripe\Exception\ApiErrorException
      */
     public function show($subscriptionId)
@@ -36,6 +37,7 @@ class StripeSubscriptionsController extends Controller
     /**
      * @param $subscriptionId
      * @return \Illuminate\Http\JsonResponse
+     *
      * @throws \Laravel\Cashier\Exceptions\SubscriptionUpdateFailure
      */
     public function update($subscriptionId)
@@ -81,8 +83,9 @@ class StripeSubscriptionsController extends Controller
     }
 
     /**
-     * @param \Laravel\Cashier\Subscription $subscription
+     * @param  \Laravel\Cashier\Subscription  $subscription
      * @return array
+     *
      * @throws \Stripe\Exception\ApiErrorException
      */
     protected function formatSubscription(Subscription $subscription)
@@ -114,7 +117,7 @@ class StripeSubscriptionsController extends Controller
     /**
      * Format the plans collection.
      *
-     * @param  \Stripe\Collection $plans
+     * @param  \Stripe\Collection  $plans
      * @return array
      */
     protected function formatPlans($plans)
@@ -152,7 +155,7 @@ class StripeSubscriptionsController extends Controller
     }
 
     /**
-     * @param mixed $value
+     * @param  mixed  $value
      * @return string|null
      */
     protected function formatDate($value)
