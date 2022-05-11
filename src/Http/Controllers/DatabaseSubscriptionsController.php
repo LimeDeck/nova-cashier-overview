@@ -44,7 +44,7 @@ class DatabaseSubscriptionsController extends Controller
     protected function formatSubscription(Subscription $subscription)
     {
         return array_merge($subscription->toArray(), [
-            'plan'            => $subscription->stripe_plan,
+            'plan'            => $subscription->stripe_price,
             'ended'           => $subscription->ended(),
             'cancelled'       => $subscription->cancelled(),
             'active'          => $subscription->active(),
