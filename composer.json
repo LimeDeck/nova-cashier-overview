@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": "^7.3 || ^8.0",
-        "laravel/nova": "^3.0"
+        "laravel/nova": "^4.0"
     },
     "require-dev": {
         "limedeck/phpunit-detailed-printer": "^6.0",

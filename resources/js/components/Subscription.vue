@@ -1,13 +1,11 @@
 <template>
   <div>
-    <h1 class="mb-3 text-90 font-normal text-2xl">
-      Subscription <span class="font-light text-70">({{ subscriptionName }})</span>
+    <h1 class="text-90 mb-3 text-2xl font-normal">
+      Subscription <span class="text-70 font-light">({{ subscriptionName }})</span>
     </h1>
 
-    <card class="mb-6 py-3 px-6 flex flex-col">
-      <database-details
-        :subscription="databaseSubscription"
-        :loading="loading.database" />
+    <card class="mb-6 flex flex-col py-3 px-6">
+      <database-details :subscription="databaseSubscription" :loading="loading.database" />
 
       <stripe-details
         v-if="databaseSubscription"
@@ -77,7 +75,7 @@ export default {
         .get(
           `${this.baseEndpoint}billable/${this.resourceId}/?subscription=${this.subscriptionName}`
         )
-        .then(res => {
+        .then((res) => {
           this.databaseSubscription = res.data.subscription;
           this.loading.database = false;
         });
@@ -88,7 +86,7 @@ export default {
 
       Nova.request()
         .get(`${this.baseEndpoint}subscriptions/${this.databaseSubscription.id}`)
-        .then(res => {
+        .then((res) => {
           this.stripeSubscription = res.data.subscription;
           this.invoices = res.data.invoices;
           this.plans = res.data.plans;
@@ -104,12 +102,12 @@ export default {
           plan: newPlan,
         })
         .then(() => {
-          this.$toasted.show('Updated successfully!', { type: 'success' });
+          Nova.success('Updated successfully!');
 
           this.fetchStripeSubscription();
         })
-        .catch(err => {
-          this.$toasted.show(err.response.data.message, { type: 'error' });
+        .catch((err) => {
+          Nova.error(err.response.data.message);
         });
     },
 
@@ -120,13 +118,13 @@ export default {
       Nova.request()
         .post(`${this.baseEndpoint}subscriptions/${this.databaseSubscription.id}/resume`)
         .then(() => {
-          this.$toasted.show('Resumed successfully!', { type: 'success' });
+          Nova.success('Resumed successfully!');
 
           this.fetchDatabaseSubscription();
           this.fetchStripeSubscription();
         })
-        .catch(err => {
-          this.$toasted.show(err.response.data.message, { type: 'error' });
+        .catch((err) => {
+          Nova.error(err.response.data.message);
         });
     },
 
@@ -137,13 +135,13 @@ export default {
       Nova.request()
         .post(`${this.baseEndpoint}subscriptions/${this.databaseSubscription.id}/cancel`)
         .then(() => {
-          this.$toasted.show('Cancelled successfully!', { type: 'success' });
+          Nova.success('Cancelled successfully!');
 
           this.fetchDatabaseSubscription();
           this.fetchStripeSubscription();
         })
-        .catch(err => {
-          this.$toasted.show(err.response.data.message, { type: 'error' });
+        .catch((err) => {
+          Nova.error(err.response.data.message);
         });
     },
   },
