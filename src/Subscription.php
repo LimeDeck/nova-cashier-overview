@@ -9,7 +9,7 @@ class Subscription extends ResourceTool
     /**
      * Subscription constructor.
      *
-     * @param string $subscription
+     * @param  string  $subscription
      */
     public function __construct(string $subscription = 'default')
     {

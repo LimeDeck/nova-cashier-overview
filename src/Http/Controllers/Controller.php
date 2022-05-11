@@ -22,8 +22,8 @@ abstract class Controller extends BaseController
     /**
      * Controller constructor.
      *
-     * @param \Illuminate\Contracts\Config\Repository $config
-     * @param \Illuminate\Http\Request                $request
+     * @param  \Illuminate\Contracts\Config\Repository  $config
+     * @param  \Illuminate\Http\Request  $request
      */
     public function __construct(Repository $config, Request $request)
     {
