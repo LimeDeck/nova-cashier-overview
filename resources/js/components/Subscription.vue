@@ -135,7 +135,7 @@ export default {
       Nova.request()
         .post(`${this.baseEndpoint}subscriptions/${this.databaseSubscription.id}/cancel`)
         .then(() => {
-          Nova.success('Cancelled successfully!');
+          Nova.success('Canceled successfully!');
 
           this.fetchDatabaseSubscription();
           this.fetchStripeSubscription();

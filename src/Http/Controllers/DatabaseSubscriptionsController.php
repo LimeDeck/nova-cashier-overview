@@ -46,7 +46,7 @@ class DatabaseSubscriptionsController extends Controller
         return array_merge($subscription->toArray(), [
             'plan'            => $subscription->stripe_price,
             'ended'           => $subscription->ended(),
-            'cancelled'       => $subscription->cancelled(),
+            'canceled'        => $subscription->canceled(),
             'active'          => $subscription->active(),
             'on_trial'        => $subscription->onTrial(),
             'on_grace_period' => $subscription->onGracePeriod(),

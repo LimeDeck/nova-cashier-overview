@@ -15,13 +15,13 @@
     <display-row v-if="subscription" class="remove-bottom-border" label="Status">
       <span v-if="subscription.on_grace_period"> On Grace Period </span>
       <span
-        v-if="subscription.cancelled || subscription.ends_at"
+        v-if="subscription.canceled || subscription.ends_at"
         class="ml-4 text-red-600 dark:text-red-400"
       >
-        Cancelled
+        Canceled
       </span>
       <span
-        v-if="subscription.active && !subscription.cancelled && !subscription.ends_at"
+        v-if="subscription.active && !subscription.canceled && !subscription.ends_at"
         class="text-green-600 dark:text-green-400"
       >
         Active

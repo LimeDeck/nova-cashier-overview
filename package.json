@@ -13,13 +13,13 @@
         "lint": "eslint resources/js --fix --ext js,vue"
     },
     "devDependencies": {
+        "@vue/compiler-sfc": "^3.2.38",
         "eslint": "^7.28.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-vue": "^7.11.1",
         "laravel-mix": "^6.0",
-        "prettier": "^2.3.1",
         "postcss": "^8.3.11",
+        "prettier": "^2.3.1",
         "vue-loader": "^16.8.3"
-    },
-    "dependencies": {}
+    }
 }

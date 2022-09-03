@@ -54,13 +54,13 @@
       <display-row v-if="subscription" label="Status">
         <span v-if="subscription.on_grace_period">On Grace Period</span>
         <span
-          v-if="subscription.cancelled || subscription.cancel_at_period_end"
+          v-if="subscription.canceled || subscription.cancel_at_period_end"
           class="ml-4 text-red-600 dark:text-red-400"
-          >Cancelled</span
+          >Canceled</span
         >
         <span
           v-if="
-            subscription.active && !subscription.cancelled && !subscription.cancel_at_period_end
+            subscription.active && !subscription.canceled && !subscription.cancel_at_period_end
           "
           class="text-green-600 dark:text-green-400"
           >Active</span
@@ -68,7 +68,7 @@
 
         <button
           v-if="
-            subscription.active && !subscription.cancelled && !subscription.cancel_at_period_end
+            subscription.active && !subscription.canceled && !subscription.cancel_at_period_end
           "
           class="mt-2 ml-4 inline-flex h-9 flex-shrink-0 flex-shrink-0 items-center rounded bg-red-500 px-4 text-sm font-bold text-white shadow hover:bg-red-300 focus:outline-none focus:ring active:bg-red-600 dark:text-gray-800"
           @click="$emit('cancel-subscription')"

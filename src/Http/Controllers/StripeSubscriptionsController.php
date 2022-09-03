@@ -99,7 +99,7 @@ class StripeSubscriptionsController extends Controller
             'plan' => $subscription->stripe_plan,
             'stripe_plan' => $stripeSubscription->plan->id,
             'ended' => $subscription->ended(),
-            'cancelled' => $subscription->cancelled(),
+            'canceled' => $subscription->canceled(),
             'active' => $subscription->active(),
             'on_trial' => $subscription->onTrial(),
             'on_grace_period' => $subscription->onGracePeriod(),
