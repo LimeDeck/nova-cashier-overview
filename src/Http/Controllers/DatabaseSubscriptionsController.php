@@ -18,8 +18,14 @@ class DatabaseSubscriptionsController extends Controller
         /** @var \Illuminate\Database\Eloquent\Model $billableModel */
         $billableModel = (new $customerModel());
 
+        $modelSoftDeletes = in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($billableModel), true);
+
         /** @var \Laravel\Cashier\Billable|\Illuminate\Database\Eloquent\Model $billable */
-        $billable = $billableModel->find($billableId);
+        $billable = $billableModel
+            ->when($modelSoftDeletes, function ($query) {
+                $query->withTrashed();
+            })
+            ->find($billableId);
 
         /** @var \Laravel\Cashier\Subscription $subscription */
         $subscription = $billable->subscription(
